@@ -1,1 +1,75 @@
-
+| Project Name | HelloGrowth CRM |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Client | HelloGrowth CRM |  |  |  |  |  |  |
+| Reference | https://crm.hellobooks.ai |  |  |  |  |  |  |
+| Created by | K Sunil |  |  |  |  |  |  |
+| Creation Date | 10-04-2026 |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+| Test Case ID | Test Scenario | Module | Test Steps | Expected Result | Actual Result | Status |  |
+|  |  |  |  |  |  |  |  |
+| TC_CRM_001 | Verify login with empty fields | Login | "1. Open url (crm.hellobooks.ai) in the application. |
+| 2.Leave Email and Password fields blank |
+| 3. Click 'Login' |
+| " | Login fails. Validation messages prompt the user to enter email and password. | Login fails. Validation messages prompt the user to enter email and password. | Fail |  |
+| TC_CRM_002 | Verify login with valid email and invalid password | Login | "1. Open url (crm.hellobooks.ai) in the application. |
+| 2.Enter registered Email |
+| 3. Enter invalid Password |
+| 4. Click 'Login'" | Login fails. An error message like "Invalid email or password" is displayed. | Login fails. An error message like "Invalid email or password" is displayed. | Fail |  |
+| TC_CRM_003 | Verify login with invalid email and valid password | Login | "1. Open url (crm.hellobooks.ai) in the application. |
+| 2.Enter unregistered Email |
+| 3. Enter valid Password |
+| 4. Click 'Login'" | Login fails. An error message like "Invalid email or password" is displayed | Login fails. An error message like "Invalid email or password" is displayed | Fail |  |
+| TC_CRM_004 | Verify login with valid credentials | Login | " |  |
+| 1. Open url (crm.hellobooks.ai) in the application. |
+| 2. Enter valid Email |
+| 3. Enter valid Password |
+| 4. Click 'Login' button" | User is successfully logged in and navigated to the CRM dashboard. | User is successfully logged in and navigated to the CRM dashboard. | Pass |  |
+| TC_CRM_005 | Verify that clicking "Leads" in the sidebar opens the Leads Dashboard. | Dashboard-Navigation | Click on "Leads" in the left-hand sidebar menu. | The system should display the Leads page. | The Leads page loads successfully. | Pass |  |
+| TC_CRM_006 | Verify that the 'Total Leads' count on the Dashboard matches the actual number of records in the Leads module. | Dashboard & Leads | "1. Navigate to Dashboard. |
+| 2. Note the 'Total Leads' count. |
+| 3. Navigate to the Leads module. |
+| 4. Count the number of rows present in the list view. |
+| " | The count on the Dashboard must exactly match the number of leads in the Leads table. | Dashboard matches exactly, number of matches in lead. | Pass |  |
+| TC_CRM_007 | Verify that clicking the "New Lead" button. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen." | New Lead side panel should display from the right side of the screen. | New Lead should display with empty field from the right side of the screen. | Pass |  |
+| TC_CRM_008 | Verify that in lead form should be all empty will be saved. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3.New Lead should be kept all empty.Not Provide  any data." | New Lead not given saved option. | New Lead should not be saved. | Pass |  |
+| TC_CRM_009 | Verify that in New lead form providing only company name should be saved. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3.Providing only Company name and  rest all are empty." | New Lead not given saved option | New Lead should not be saved. | Pass |  |
+| TC_CRM_010 | Verify that in New Lead form providing data only mandatory field. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3.Providing data only mandatory field that represent in red color symbol *. |
+| 4.. Click the Save button." | New Lead not be saved. | New Lead should not be saved. | Pass |  |
+| TC_CRM_011 | Verify that in New Lead form giving invalid phone and providing rest are valid input. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3.Input giving invalid phone number (eg: 0000000001)and rest all giving valid input should be saved. |
+| 4.. Click the Save button." | New Lead should not saved and  error massage should be display. | New Lead will saved  and not giving any error message. | Fail |  |
+| TC_CRM_012 | Verify character counter and validation checkmarks work on text fields. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3. Open the ""New Lead"" form. |
+| 4. Type ""ds"" in the Company Name box. |
+| 5. Type ""dd"" in the Lead Name box. |
+| 6. Click the Save button." | The character count should show "2 / 100" and a green checkmark should appear inside the input boxes. | Input box green checkmarks appear. | Pass |  |
+| TC_CRM_0013 | Verify if company name (optional) empty and click on save button giving any warning message. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3. Open the New Lead form. |
+| 4.Leave the Company Name field completely blank. |
+| 5. Enter a valid name in the mandatory Lead Name field. |
+| 6. Enter a valid 10-digit number in the Phone field |
+| 7. Click the blue Save button. |
+| " | Because  the field as (Optional), the new lead should save successfully and appear in the list. | The form does not save and no error message is displayed. | Fail |  |
+| TC_CRM_014 | Verify that existing lead name in mandatory field is cleared should be saved. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3.Navigate to the lead list and click on an existing lead to open its details. |
+| 4.Delete all text inside the mandatory lead name field it is completely empty. |
+| 5.Click on save  action button. " | The system should block the save action and display a clear, red validation error message. | The system not blocked and save as it is. | Fail |  |
+| TC_CRM_015 | Verify that existing lead name providing invalid phone number in mandatory field  should be saved. | Leads | "1.Go to the Leads page. |
+| 2. Click the ""+ Lead"" button at the top right of the screen. |
+| 3.Navigate to the lead list and click on an existing lead to open its details. |
+| 4.Existing phone replace to invalid phone number. |
+| 5.Click on save action button." | The system should block the save action and display a clear, red validation error message.(eg:proving valid phone number) | The system fails  and  successfully updates the lead with the invalid phone number, giving no warning to the user. | Fail |
